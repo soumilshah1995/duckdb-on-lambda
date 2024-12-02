@@ -1,0 +1,25 @@
+service: xtable-sync
+
+provider:
+  name: aws
+  architecture: arm64
+  runtime: python3.8
+  memorySize: 3000
+  timeout: 500
+  ecr:
+    images:
+      duckdblambda:
+        path: ./
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource:
+        - arn:aws:s3:::*
+  deploymentBucket:
+    name: XX
+
+functions:
+  duckdblambda:
+    image:
+      name: duckdblambda
