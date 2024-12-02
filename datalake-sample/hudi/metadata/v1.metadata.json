@@ -1,0 +1,91 @@
+{
+  "format-version" : 2,
+  "table-uuid" : "3fb6e08f-ec85-443f-98e1-8f2e1444139d",
+  "location" : "s3://datalake-demo-1995/hudi",
+  "last-sequence-number" : 0,
+  "last-updated-ms" : 1732410579632,
+  "last-column-id" : 10,
+  "current-schema-id" : 0,
+  "schemas" : [ {
+    "type" : "struct",
+    "schema-id" : 0,
+    "identifier-field-ids" : [ 6 ],
+    "fields" : [ {
+      "id" : 1,
+      "name" : "_hoodie_commit_time",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 2,
+      "name" : "_hoodie_commit_seqno",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 3,
+      "name" : "_hoodie_record_key",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 4,
+      "name" : "_hoodie_partition_path",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 5,
+      "name" : "_hoodie_file_name",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 6,
+      "name" : "id",
+      "required" : true,
+      "type" : "int"
+    }, {
+      "id" : 7,
+      "name" : "name",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 8,
+      "name" : "age",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 9,
+      "name" : "city",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 10,
+      "name" : "create_ts",
+      "required" : false,
+      "type" : "string"
+    } ]
+  } ],
+  "default-spec-id" : 0,
+  "partition-specs" : [ {
+    "spec-id" : 0,
+    "fields" : [ {
+      "name" : "city",
+      "transform" : "identity",
+      "source-id" : 9,
+      "field-id" : 1000
+    } ]
+  } ],
+  "last-partition-id" : 1000,
+  "default-sort-order-id" : 0,
+  "sort-orders" : [ {
+    "order-id" : 0,
+    "fields" : [ ]
+  } ],
+  "properties" : {
+    "schema.name-mapping.default" : "[ {\n  \"field-id\" : 1,\n  \"names\" : [ \"_hoodie_commit_time\" ]\n}, {\n  \"field-id\" : 2,\n  \"names\" : [ \"_hoodie_commit_seqno\" ]\n}, {\n  \"field-id\" : 3,\n  \"names\" : [ \"_hoodie_record_key\" ]\n}, {\n  \"field-id\" : 4,\n  \"names\" : [ \"_hoodie_partition_path\" ]\n}, {\n  \"field-id\" : 5,\n  \"names\" : [ \"_hoodie_file_name\" ]\n}, {\n  \"field-id\" : 6,\n  \"names\" : [ \"id\" ]\n}, {\n  \"field-id\" : 7,\n  \"names\" : [ \"name\" ]\n}, {\n  \"field-id\" : 8,\n  \"names\" : [ \"age\" ]\n}, {\n  \"field-id\" : 9,\n  \"names\" : [ \"city\" ]\n}, {\n  \"field-id\" : 10,\n  \"names\" : [ \"create_ts\" ]\n} ]",
+    "write.parquet.compression-codec" : "zstd"
+  },
+  "current-snapshot-id" : -1,
+  "refs" : { },
+  "snapshots" : [ ],
+  "statistics" : [ ],
+  "snapshot-log" : [ ],
+  "metadata-log" : [ ]
+}
