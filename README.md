@@ -17,3 +17,22 @@ docker run -p 9000:8080 \
 
 python3 test_duckdb_lambda.py
 ```
+
+# Sample test Commands
+```
+
+curl -s -X POST http://localhost:9000/2015-03-31/functions/function/invocations \
+-H "Content-Type: application/json" \
+-d '{
+  "query": "SELECT avg(c_acctbal) FROM read_parquet(\"s3://XX/datalake/parquet/customer.parquet\")",
+  "extensions": []
+}' | jq .
+
+
+curl -s -X POST http://localhost:9000/2015-03-31/functions/function/invocations \
+-H "Content-Type: application/json" \
+-d '{
+  "query": "SELECT count(*) FROM delta_scan(\"s3://XX/datalake/delta/\")",
+  "extensions": ["delta", "aws", "httpfs"]
+}' | jq .
+```
